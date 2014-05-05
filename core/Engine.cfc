@@ -384,7 +384,7 @@
 		// --->
 		<cfheader statuscode="#representation.getResponseHeaders().getStatusCode()#" />
 		<cfheader name="Content-Type" value="#format.respondsWith()#" />
-		<cfheader name="Access-Control" value="allow <*>" /><!--- this allows cross-domain calls; which should potentially be configurable --->
+		<cfheader name="Access-Control-Allow-Origin" value="*" /><!--- this allows cross-domain calls; which should potentially be configurable --->
 		<cfheader name="Vary" value="Accept" /><!--- Vary header allows proxies to cache non-standard MIME types --->
 		<cfloop from="1" to="#arrayLen(customHeaders)#" index="headerIndex">
 			<cfheader name="#customHeaders[headerIndex].name#" value="#customHeaders[headerIndex].value#" />
